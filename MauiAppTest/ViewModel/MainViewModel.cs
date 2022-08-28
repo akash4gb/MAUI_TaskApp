@@ -1,25 +1,22 @@
 ﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.ComponentModel;
 
 namespace MauiAppTest.ViewModel;
 
-public class MainViewModel : INotifyPropertyChanged
+public partial class MainViewModel : ObservableObject
 {
+    
+
+    [ObservableProperty]
     string text;
 
-    public string Text
+    [RelayCommand]
+    void Add()
     {
-        get => text;
-        set
-        {
-            text = value;
-            OnPropertyChanged(nameof(Text));
-        }
+        //Add our Item
+        Text = text;
     }
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    void OnPropertyChanged(string name) =>
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
 }
