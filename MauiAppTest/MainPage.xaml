@@ -18,10 +18,11 @@
 
         <Entry Placeholder="Enter Task"
                Grid.Row="1"/>
+        
         <Button Text="Add"
                 Grid.Row="1"
                 Grid.Column="1"
-                />
+        />
 
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
             <CollectionView.ItemsSource>
