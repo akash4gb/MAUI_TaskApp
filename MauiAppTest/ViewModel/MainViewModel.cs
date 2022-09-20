@@ -25,7 +25,6 @@ public partial class MainViewModel : ObservableObject
         if (string.IsNullOrWhiteSpace(text))
         {
             return;
-
         }
 
         Items.Add(Text);
@@ -43,4 +42,9 @@ public partial class MainViewModel : ObservableObject
         }
     }
 
+    [RelayCommand]
+   async Task Tap(string s) 
+    {
+        await Shell.Current.GoToAsync($"{nameof(DetailPage)}?TextId={s}");
+    }
 }
